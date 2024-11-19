@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://ep-steep-bonus-a28b8185.eu-central-1.aws.neon.tech/prospera?user=prospera_owner&password=ZzP7LRuo8FJU&sslmode=require
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
