@@ -27,7 +27,7 @@ public class UserController {
 
     @PutMapping("/{id}/make-admin")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<String> makeUserAdmin(@PathVariable Integer id) {
+    public ResponseEntity<String> makeUserAdmin(@PathVariable Long id) {
         userService.makeAdmin(id);
         return ResponseEntity.ok("User has been promoted to admin");
     }

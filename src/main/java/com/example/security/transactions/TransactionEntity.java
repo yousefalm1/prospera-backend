@@ -41,5 +41,6 @@ public class TransactionEntity {
     private Date createdAt;
     private Date updatedAt;
 
+
 }
 
