@@ -1,9 +1,8 @@
 package com.example.security.investments;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.example.security.properties.PropertyEntity;
+import com.example.security.user.UserEntity;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,6 +21,14 @@ public class InvestmentEntity {
     @Id
     @GeneratedValue
     private Long id;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private UserEntity user;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "properties")
+    private PropertyEntity property;
 
     private String name;
     private Integer userId;
