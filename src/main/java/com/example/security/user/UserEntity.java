@@ -1,6 +1,7 @@
 package com.example.security.user;
 
 
+import com.example.security.investments.InvestmentEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -28,6 +29,8 @@ public class UserEntity implements UserDetails {
     private String lastName;
     private String email;
     private String password;
+
+
 
     @Enumerated(EnumType.STRING)
     private Role role;
@@ -66,4 +69,8 @@ public class UserEntity implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+
+
+
 }
