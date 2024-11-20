@@ -13,7 +13,7 @@ public class UserService {
     private final UserRepository userRepository;
 
 
-    public UserEntity makeAdmin(Integer id) {
+    public UserEntity makeAdmin(Long id) {
 
         UserEntity user = userRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("User with id " + id + " not found"));
