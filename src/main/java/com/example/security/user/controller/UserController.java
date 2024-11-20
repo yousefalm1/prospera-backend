@@ -1,6 +1,6 @@
 package com.example.security.user.controller;
 
-import com.example.security.user.User;
+import com.example.security.user.UserEntity;
 import com.example.security.user.UserRepository;
 import com.example.security.user.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -20,8 +20,8 @@ public class UserController {
 
     @GetMapping
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<List<User>> getAllUsers() {
-        List<User> users = userRepository.findAll(); // Fetches all users from database
+    public ResponseEntity<List<UserEntity>> getAllUsers() {
+        List<UserEntity> users = userRepository.findAll(); // Fetches all users from database
         return ResponseEntity.ok(users); // Return the list of users
     }
 
