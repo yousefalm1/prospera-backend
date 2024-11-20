@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>security</artifactId>
+    <artifactId>prospera-backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>security</name>
-    <description>Demo project for Spring Boot</description>
+    <name>prospera-backend</name>
+    <description>Prospera cornerstone project</description>
     <url/>
     <licenses>
         <license/>
