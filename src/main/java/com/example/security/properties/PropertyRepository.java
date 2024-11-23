@@ -7,4 +7,5 @@ import java.util.Optional;
 public interface PropertyRepository extends JpaRepository<PropertyEntity, Long> {
 //    Optional<PropertyEntity> findById(Long id);
 //
+public interface PropertyRepository extends JpaRepository<PropertyEntity, Long> {
 }

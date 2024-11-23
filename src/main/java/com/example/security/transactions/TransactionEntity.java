@@ -56,5 +56,6 @@ public class TransactionEntity {
     @Column(name = "updatedAt", nullable = false)
     private Date updatedAt;
 
+
 }
 

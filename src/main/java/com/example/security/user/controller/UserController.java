@@ -46,6 +46,12 @@ public class UserController {
         } catch (RuntimeException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND); // Return NOT_FOUND if user does not exist
         }
+=======
+    @PutMapping("/{id}/make-admin")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<String> makeUserAdmin(@PathVariable Long id) {
+        userService.makeAdmin(id);
+        return ResponseEntity.ok("User has been promoted to admin");
     }
 
     @DeleteMapping("/deleteUser")

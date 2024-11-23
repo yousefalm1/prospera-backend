@@ -25,6 +25,8 @@ public class UserService {
     public UserEntity createUser(UserEntity user) {
         return userRepository.save(user);
     }
+=======
+    public UserEntity makeAdmin(Long id) {
 
     public List<UserEntity> getAllUsers() {
         return userRepository.findAll();
