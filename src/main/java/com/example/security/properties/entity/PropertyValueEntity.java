@@ -1,8 +1,9 @@
-package com.example.security.properties;
+package com.example.security.properties.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,21 +17,16 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "_property")
-public class PropertyEntity {
+@Table(name = "_property_value")
+public class PropertyValueEntity {
 
     @Id
     @GeneratedValue
     private Long id;
 
-    private String name;
-    private String location;
-    private String description;
-    private Integer totalShares;
-    private Integer availableShares;
     private Integer value;
-    private Integer rentalIncome;
-    private Date createdAt;
-    private Date updatedAt;
+    private Date valueDate;
 
+    @ManyToOne
+    private PropertyEntity property;
 }
