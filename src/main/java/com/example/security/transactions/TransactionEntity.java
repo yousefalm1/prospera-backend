@@ -1,8 +1,7 @@
 package com.example.security.transactions;
 
 
-import com.example.security.investments.InvestmentEntity;
-import com.example.security.properties.PropertyEntity;
+import com.example.security.properties.entity.PropertyEntity;
 import com.example.security.user.UserEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

@@ -1,6 +1,6 @@
 package com.example.security.investments;
 
-import com.example.security.properties.PropertyEntity;
+import com.example.security.properties.entity.PropertyEntity;
 import com.example.security.user.UserEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
