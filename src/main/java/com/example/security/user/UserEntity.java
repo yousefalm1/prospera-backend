@@ -24,13 +24,16 @@ public class UserEntity implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
     private String firstName;
     private String lastName;
     private String email;
     private String password;
 
 
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<InvestmentEntity> investments;
 
     @Enumerated(EnumType.STRING)
     private Role role;

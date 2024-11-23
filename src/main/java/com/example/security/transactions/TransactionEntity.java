@@ -28,17 +28,32 @@ public class TransactionEntity {
     @JoinColumn(name = "user_id")
     private UserEntity user;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "user_id")
     private PropertyEntity property;
 
-    private Integer userId;
-    private Integer propertyId;
+    @Column(name = "userId", nullable = false)
+    private Long userId;
+
+    @Column(name = "propertyId", nullable = false)
+    private Long propertyId;
+
+    @Column(name = "type", nullable = false)
     private String type;
+
+    @Column(name = "amount", nullable = false)
     private Double amount;
+
+    @Column(name = "date", nullable = false)
     private Date date;
+
+    @Column(name = "details", nullable = false)
     private String details;
+
+    @Column(name = "createdAt", nullable = false)
     private Date createdAt;
+
+    @Column(name = "updatedAt", nullable = false)
     private Date updatedAt;
 
 }
