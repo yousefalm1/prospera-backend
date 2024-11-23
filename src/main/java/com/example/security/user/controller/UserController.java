@@ -19,13 +19,34 @@ public class UserController {
     private final UserRepository userRepository;
     private final UserService userService;
 
-    @GetMapping
-    @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<List<UserEntity>> getAllUsers() {
-        List<UserEntity> users = userRepository.findAll(); // Fetches all users from database
-        return ResponseEntity.ok(users); // Return the list of users
+    @PostMapping
+    public ResponseEntity<UserEntity> createUser(@RequestBody UserEntity user) {
+        UserEntity createdUser = userService.createUser(user); // Create user using UserService
+        return new ResponseEntity<>(createdUser, HttpStatus.CREATED);
     }
 
+    @GetMapping
+    public ResponseEntity<List<UserEntity>> getAllUsers() {
+        List<UserEntity> users = userService.getAllUsers(); // Fetch all users using UserService
+        return ResponseEntity.ok(users);
+    }
+
+    @GetMapping("/getUserById")
+    public ResponseEntity<UserEntity> getUserById(@PathVariable Long id) {
+        return userService.getUserById(id)
+                .map(ResponseEntity::ok)
+                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
+    @PutMapping("/updateUser")
+    public ResponseEntity<UserEntity> updateUser(@PathVariable Long id, @RequestBody UserEntity userDetails) {
+        try {
+            UserEntity updatedUser = userService.updateUser(id, userDetails); // Update user using UserService
+            return ResponseEntity.ok(updatedUser);
+        } catch (RuntimeException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND); // Return NOT_FOUND if user does not exist
+        }
+=======
     @PutMapping("/{id}/make-admin")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<String> makeUserAdmin(@PathVariable Long id) {
