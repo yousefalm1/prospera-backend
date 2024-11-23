@@ -26,14 +26,14 @@ public class InvestmentEntity {
     @JoinColumn(name = "user_id")
     private UserEntity user;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "properties")
     private PropertyEntity property;
 
     private String name;
-    private Integer userId;
-    private Integer propertyId;
-    private Integer sharesOwned;
+    private Long userId;
+    private Long propertyId;
+    private Long sharesOwned;
     private Date investmentDate;
     private Double amountInvested;
     private Date createdAt;
@@ -56,27 +56,27 @@ public class InvestmentEntity {
         this.name = name;
     }
 
-    public Integer getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
-    public Integer getPropertyId() {
+    public Long getPropertyId() {
         return propertyId;
     }
 
-    public void setPropertyId(Integer propertyId) {
+    public void setPropertyId(Long propertyId) {
         this.propertyId = propertyId;
     }
 
-    public Integer getSharesOwned() {
+    public Long getSharesOwned() {
         return sharesOwned;
     }
 
-    public void setSharesOwned(Integer sharesOwned) {
+    public void setSharesOwned(Long sharesOwned) {
         this.sharesOwned = sharesOwned;
     }
 
