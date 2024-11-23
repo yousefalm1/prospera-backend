@@ -1,12 +1,7 @@
 package com.example.security.user.service;
 
-import com.example.security.properties.PropertyEntity;
-import com.example.security.properties.PropertyRepository;
-import com.example.security.transactions.TransactionEntity;
-import com.example.security.user.Role;
 import com.example.security.user.UserEntity;
 import com.example.security.user.UserRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,7 +20,6 @@ public class UserService {
     public UserEntity createUser(UserEntity user) {
         return userRepository.save(user);
     }
-=======
     public UserEntity makeAdmin(Long id) {
 
     public List<UserEntity> getAllUsers() {
